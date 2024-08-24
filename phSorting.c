@@ -1,3 +1,5 @@
+        //wrong answer
+
 #include <stdio.h>
 
 int main()
@@ -7,7 +9,7 @@ int main()
 
     scanf("%d", &N);
 
-    int A[N];
+    int A[100];
 
     for (int i = 0; i < N; i++)
     {
@@ -21,16 +23,17 @@ int main()
 
         b = A[i];
         y = A[i];
-        for (int j = i; j < N; j++)
+        for (int j = i+1; j < N; j++)
         {
             if (b > A[j])
             {
                 b = A[j];
                 A[i] = A[j];
                 x = j;
+                  A[x] = y; 
             }
         }
-        A[x] = y; 
+      
 
         
     }
