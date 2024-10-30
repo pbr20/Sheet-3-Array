@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "C:\\codeforce sheet 3#\\Sheet-3-Array"
             ],
             "options": {
                 "cwd": "${fileDirname}"

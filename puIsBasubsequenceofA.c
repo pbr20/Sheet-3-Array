@@ -1,5 +1,3 @@
-        //wrong ans on test 4
-
 #include <stdio.h>
 
 void subschecker(int n, int m, int A[], int B[]);
@@ -11,8 +9,8 @@ int main()
 
     scanf("%d%d", &N, &M);
 
-    int A[N];
-    int B[M];
+    int A[10000];
+    int B[10000];
 
     for (int i = 0; i < N; i++)
     {
@@ -32,25 +30,20 @@ int main()
 void subschecker(int n, int m, int A[], int B[])
 {
     int count = 0;
-    int temp1 = 0;
+    int t = 0;
     for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = t; j < n; j++)
         {
             if (B[i] == A[j])
             {
-                if (j >= temp1)
-                {
-                    count++;
-                     temp1 = j;
-                    break;
-                }
-               
+                A[j] = 0;
+                count++;
+                t = j;
+                break;
             }
         }
     }
-
-
 
     if (count == m)
     {

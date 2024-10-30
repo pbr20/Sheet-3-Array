@@ -7,26 +7,23 @@ int main()
  
     int  N;
  
-    scanf("%lld", &N);
+    scanf("%d", &N);
  
-    int long long A;
-    int B[N];
-    int long long sum = 0;
+    char B[1000000];
+    int sum = 0;
  
-    scanf("%lld", &A);
+    
  
-    for (int long long i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
-        B[i] = A % 10;
-        A = A / 10;
+        scanf(" %c", &B[i]);
+        sum += (B[i] - '0');
+        
     }
  
-    for (int long long  i = 0; i < N; i++)
-    {
-        sum = sum + B[i];
-    }
+    
  
-    printf("%lld\n", sum);
+    printf("%d\n", sum);
  
     return 0;
 }

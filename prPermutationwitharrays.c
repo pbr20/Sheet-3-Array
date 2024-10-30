@@ -1,5 +1,3 @@
-        //wrong answer on test 4
-
 #include <stdio.h>
 
 int counting(int n,int A[],int B[]);
@@ -9,11 +7,11 @@ int main()
 
     int  n;
     int count = 0;
-    int count1=0;
+    
     scanf("%d", &n);
 
-     int  A[n]; 
-     int   B[n];
+     int  A[1000]; 
+     int   B[1000];
 
     for (int i = 0; i < n; i++)
     {
@@ -28,7 +26,7 @@ int main()
     count = counting(n,A,B);
     
 
-    if (count == (2*n))
+    if (count == (n))
     {
        
             printf("yes\n");
@@ -51,6 +49,7 @@ int counting(int n, int A[],int B[]){
             if (B[i] == A[j])
             {
                 count++;
+                A[j] = 0;
                 break;
             }
 
@@ -58,18 +57,6 @@ int counting(int n, int A[],int B[]){
         }
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (A[i] == B[j])
-            {
-                count++;
-                break;
-            }
-
-           
-        }
-    }
+   
     return count;
 }

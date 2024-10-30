@@ -1,26 +1,24 @@
-        //wrong answer on test 23
-
 #include <stdio.h>
 
 int main()
 {
 
     int N, M;
-    long long int X;
+    int X;
 
     scanf("%d%d", &N, &M);
 
-    long long int A[N][M];
+    int A[100][100];
 
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < M; j++)
         {
-            scanf("%lld", &A[i][j]);
+            scanf("%d", &A[i][j]);
         }
     }
 
-    scanf("%lld", &X);
+    scanf("%d", &X);
 
     int count =0;
     for (int i = 0; i < N; i++)
@@ -34,8 +32,11 @@ int main()
                 break;
             }
         }
+        if(count == 1){
+            break;
+        }
     }
-    if (count != 1)
+    if (count == 0)
     {
         printf("will take number\n");
     }
