@@ -1,16 +1,35 @@
 #include <stdio.h>
 int main()
 {
-   int n,i,j,k,star=0;
+    int count=0, n,t,A[4],f=0;
 
-   scanf("%d",&n);
-   for(i=1;i<=n;i++){
-       star=2*i-1;
-        for(j=1;j<=star;j++)
-       {
-           printf("*");
-       }
-       printf("\n");
-   }
- return 0;
+    scanf("%d", &n);
+    t=n;
+    n/=10;
+    t%=10;
+
+    for(int i =0; i<3; i++){
+        if(t == (n%10)){
+            count++;
+        }else if(i==1 && t != (n%10)){
+            f=1;
+        }
+         t=n;
+        t%=10;
+        n/=10;
+    
+       
+    }
+
+    if(count>=2 && f==0){
+        printf("Yes");
+    }
+    else{
+        printf("No");
+    }
+
+
+
+   
+    return 0;
 }
