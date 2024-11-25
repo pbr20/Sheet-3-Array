@@ -9,7 +9,7 @@ int main()
 
     scanf("%d", &T);
 
-    int A[1000000];
+    int A[100];
 
     for (int i = 0; i < T; i++)
     {

@@ -1,35 +1,37 @@
-#include <stdio.h>
-int main()
-{
-    int count=0, n,t,A[4],f=0;
+#include<stdio.h>
 
-    scanf("%d", &n);
-    t=n;
-    n/=10;
-    t%=10;
+int main(){
 
-    for(int i =0; i<3; i++){
-        if(t == (n%10)){
-            count++;
-        }else if(i==1 && t != (n%10)){
-            f=1;
-        }
-         t=n;
-        t%=10;
-        n/=10;
-    
-       
-    }
+long long int fib1 = 0;
+long long int fib2 = 1;
 
-    if(count>=2 && f==0){
-        printf("Yes");
-    }
-    else{
-        printf("No");
-    }
+long long sum =0;
+
+int N;
+
+scanf("%d",&N);
+
+if(N==1){
+    printf("%lld",fib1);
+}
+
+if(N==2){
+    printf("%lld",fib2);
+}
+
+if(N>=3){
+    fib1 = fib2;
+    for(int i=2; i<N; i++){
+        sum = sum + fib2;
+        fib2 = fib1;
+        fib1 = sum;
+    } 
+
+    printf("%lld",sum);
+}
 
 
 
-   
     return 0;
+
 }

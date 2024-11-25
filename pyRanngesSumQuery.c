@@ -7,7 +7,7 @@ long long int sum=0;
  
 scanf("%d%d",&N,&Q);
  
-long long int A[N];
+long long int A[100000];
  A[0] = 0;
 for(int i=1; i<=N; i++){
     scanf("%lld",&A[i]);
